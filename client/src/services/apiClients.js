@@ -10,12 +10,14 @@ const createTodo = async (body) => {
     body: JSON.stringify(body),
   });
   const todo = await response.json();
+  console.log(todo);
   return todo;
 };
 
 const getTodos = async () => {
   const response = await fetch("http://localhost:5001/todos");
   const todos = await response.json();
+  console.log(todos);
   return todos;
 };
 
