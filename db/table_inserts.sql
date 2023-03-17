@@ -2,7 +2,6 @@ CREATE TABLE todos (
     id SERIAL PRIMARY KEY,
     description text
 );
-      
 
 SELECT * FROM todos;
 

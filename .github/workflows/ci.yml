@@ -1,0 +1,19 @@
+name: CI Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  ci-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: start containers
+        run: docker-compose up -d
+      - name: wait for containers to be ready
+        run: sleep 5s
+        shell: bash
+      - name: run tests on the api
+        run: docker-compose exec -t api npm test
+      - name: run tests on the api
+        run: docker-compose exec -t client npm test

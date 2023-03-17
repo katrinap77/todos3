@@ -1,0 +1,11 @@
+GET http://localhost:5001/todos HTTP/1.1
+
+
+###
+POST http://localhost:5001/todos
+content-type: application/json;
+
+{
+  "id": 10,
+  "description": "Get the washing in."
+}
