@@ -1,4 +1,3 @@
-
 # New version
 services:
   # A Docker web service
@@ -6,6 +5,7 @@ services:
     name: api
     env: docker
     rootDir: api
+    buildCommand: npm start
     envVars:
       - key: API_PORT
         value: 80
